@@ -6,7 +6,8 @@ public enum ItemCategory {
     DEFAULT(new DefaultStrategy()),
     POSITIVE_AGING(new PositiveAgingStrategy()),
     PASS(new PassStrategy()),
-    LEGENDARY(new LegendaryStrategy());
+    LEGENDARY(new LegendaryStrategy()),
+    CONJURED(new ConjuredStrategy());
 
     private final ProgressionStrategy strategy;
 
@@ -32,6 +33,8 @@ public enum ItemCategory {
                 return PASS;
             case "Sulfuras, Hand of Ragnaros":
                 return LEGENDARY;
+            case "Conjured Mana Cake":
+                return CONJURED;
             default:
                 return DEFAULT;
         }

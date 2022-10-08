@@ -93,7 +93,15 @@ class GildedRoseTest {
             // Backstage passes increase in quality as the sell-in date approaches
             createItemProgressArguments("Backstage passes to a TAFKAL80ETC concert", 11, 10, 11, 0, 36),
             // Backstage passes increase in quality as the sell-in date approaches, but never above 50
-            createItemProgressArguments("Backstage passes to a TAFKAL80ETC concert", 11, 30, 11, 0, 50)
+            createItemProgressArguments("Backstage passes to a TAFKAL80ETC concert", 11, 30, 11, 0, 50),
+            // Conjured items decrease in quality twice after 1 day (before sell-in date)
+            createItemProgressArguments("Conjured Mana Cake", 1, 10, 1, 0, 8),
+            // Conjured items decrease in quality 4 times after 1 day (after sell-in date)
+            createItemProgressArguments("Conjured Mana Cake", 0, 10, 1, -1, 6),
+            // Conjured items decrease in quality twice as fast as normal items
+            createItemProgressArguments("Conjured Mana Cake", 1, 10, 2, -1, 4),
+            // Conjured items decrease in quality twice as fast as normal items, but never below zero
+            createItemProgressArguments("Conjured Mana Cake", 1, 10, 4, -3, 0)
         );
     }
 
